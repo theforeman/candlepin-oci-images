@@ -7,8 +7,24 @@ RUN dnf -y update && \
     dnf clean all
 
 RUN dnf -y --nodocs --setopt install_weak_deps=False install \
+    /usr/bin/envsubst \
     https://yum.theforeman.org/candlepin/${VERSION}/el9/x86_64/candlepin-${VERSION_XYZ}-1.el9.noarch.rpm \
     https://yum.theforeman.org/candlepin/${VERSION}/el9/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el9.noarch.rpm && \
-    dnf clean all
+    dnf clean all && \
+    rm /etc/candlepin/candlepin.conf /etc/tomcat/server.xml
 
-CMD ["/usr/libexec/tomcat/server", "start"]
+VOLUME /var/log/candlepin
+VOLUME /var/log/tomcat
+
+ENV CANDLEPIN_PORT=23443
+ENV CANDLEPIN_HOSTNAME=localhost
+ENV CANDLEPIN_TLS_VERSIONS=TLSv1.2
+ENV CANDLEPIN_TLS_CIPHERS=TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256
+
+ADD candlepin.conf.tpl /etc/candlepin/
+ADD server.xml.tpl /etc/tomcat/
+ADD tomcat.conf /etc/tomcat/conf.d/candlepin.conf
+
+ADD start /usr/libexec/candlepin/
+
+CMD ["/usr/libexec/candlepin/start"]
