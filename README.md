@@ -4,6 +4,14 @@ The [candlepin-oci-images](https://github.com/theforeman/candlepin-ocp-images) r
 
 Note that OCI stands for "Open Container Initiative", see [here](https://opencontainers.org/).
 
+## Environment variables
+
+The container can be configured using environment variables.
+
+| Variable                      | Description                                  |
+|-------------------------------|----------------------------------------------|
+| `CANDLEPIN_KEYSTORE_PASSWORD` | Password to both the keystore and truststore |
+
 ## How to Build
 
 To build the container image locally:
