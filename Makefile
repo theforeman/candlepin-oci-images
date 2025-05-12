@@ -1,8 +1,20 @@
-IMAGE_NAME=quay.io/theforeman/candlepin
-IMAGE_TAG=4.4.14
+IMAGE_NAME=quay.io/foreman/candlepin
+
+PROJECT_XY_TAG=4.4
+PROJECT_XYZ_TAG=${PROJECT_XY_TAG}.14
+
+FOREMAN_XY_TAG=foreman-3.16
+FOREMAN_XYZ_TAG=${FOREMAN_XY_TAG}.0
+
+IMAGE_TAGS=${IMAGE_NAME}:${PROJECT_XY_TAG} ${IMAGE_NAME}:${PROJECT_XYZ_TAG} ${IMAGE_NAME}:${FOREMAN_XY_TAG} ${IMAGE_NAME}:${FOREMAN_XYZ_TAG}
 
 build:
-	podman build -f images/candlepin/Containerfile -t ${IMAGE_NAME}:${IMAGE_TAG} .
+	podman build --file images/candlepin/Containerfile --tag ${IMAGE_NAME}:${PROJECT_XYZ_TAG}	.
+	$(foreach tag,$(IMAGE_TAGS),\
+		podman tag ${IMAGE_NAME}:${PROJECT_XYZ_TAG} $(tag); \
+	)
 
 push:
-	podman push ${IMAGE_NAME}:${IMAGE_TAG}
+	$(foreach tag,$(IMAGE_TAGS),\
+		podman push $(tag);\
+	)
