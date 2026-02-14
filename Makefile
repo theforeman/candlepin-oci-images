@@ -1,6 +1,6 @@
 IMAGE_NAME=quay.io/foreman/candlepin
 
-PROJECT_XY_TAG=4.6
+PROJECT_XY_TAG=4.7
 PROJECT_XYZ_TAG=${PROJECT_XY_TAG}.4
 
 FOREMAN_XY_TAG=foreman-nightly
