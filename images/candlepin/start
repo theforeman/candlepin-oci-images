@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+for template in /etc/candlepin/*.tpl ; do
+	destination=$(basename "$template" .tpl)
+	if [[ ! -f "$destination" ]] ; then
+		envsubst < "$template" > "$destination"
+	fi
+done
+
+exec /usr/libexec/tomcat/server start

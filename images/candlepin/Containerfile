@@ -11,4 +11,8 @@ RUN dnf -y --nodocs --setopt install_weak_deps=False install \
     https://yum.theforeman.org/candlepin/${VERSION}/el9/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el9.noarch.rpm && \
     dnf clean all
 
-CMD ["/usr/libexec/tomcat/server", "start"]
+ADD broker.xml.tpl /etc/candlepin/
+
+ADD start /usr/libexec/candlepin/
+
+CMD ["/usr/libexec/candlepin/start"]
