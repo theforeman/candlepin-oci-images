@@ -7,6 +7,9 @@ RUN dnf -y update && \
     dnf clean all
 
 RUN dnf -y --nodocs --setopt install_weak_deps=False install \
+    java-25-openjdk-headless \
+    openssl \
+    openssl-devel \
     https://yum.theforeman.org/candlepin/${VERSION}/el9/x86_64/candlepin-${VERSION_XYZ}-1.el9.noarch.rpm \
     https://yum.theforeman.org/candlepin/${VERSION}/el9/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el9.noarch.rpm && \
     dnf clean all
