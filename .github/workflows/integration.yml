@@ -1,0 +1,121 @@
+---
+name: Integration test (foremanctl)
+
+on:
+  workflow_dispatch:
+    inputs:
+      foremanctl_ref:
+        description: 'foremanctl branch or tag to test against'
+        required: false
+        default: 'master'
+  pull_request:
+    paths:
+      - 'images/**'
+      - 'Makefile'
+      - '.github/workflows/integration.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: integration-${{ github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  CONTAINER_TAG_STREAM: nightly
+  CANDLEPIN_IMAGE_TAG: foreman-nightly
+
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    name: foremanctl integration
+    steps:
+      - name: Checkout candlepin-oci-images
+        uses: actions/checkout@v7
+
+      - name: Install podman
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y podman
+
+      - name: Build candlepin image
+        run: make build
+
+      - name: Export image as tarball
+        run: |
+          podman save -o candlepin-image.tar quay.io/foreman/candlepin:${{ env.CANDLEPIN_IMAGE_TAG }}
+
+      - name: Checkout foremanctl
+        uses: actions/checkout@v7
+        with:
+          repository: theforeman/foremanctl
+          ref: ${{ github.event.inputs.foremanctl_ref || 'master' }}
+          path: foremanctl
+
+      - name: Prepare image for VM transfer
+        run: mv candlepin-image.tar foremanctl/
+
+      - name: Set container_tag_stream to ${{ env.CONTAINER_TAG_STREAM }}
+        run: |
+          sed -i '/container_tag_stream:/ s/:.*/: "${{ env.CONTAINER_TAG_STREAM }}"/' foremanctl/src/vars/images.yml
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Setup libvirt for Vagrant
+        uses: voxpupuli/setup-vagrant@v0
+
+      - name: Install Ansible
+        run: pip install --upgrade ansible-core
+
+      - name: Setup environment
+        working-directory: foremanctl
+        run: ./setup-environment
+
+      - name: Start VM
+        working-directory: foremanctl
+        run: ./forge vms start --vms "quadlet"
+
+      - name: Install podman in VM
+        working-directory: foremanctl
+        run: vagrant ssh quadlet -- sudo dnf install -y podman
+
+      - name: Load image into VM
+        working-directory: foremanctl
+        run: |
+          vagrant ssh quadlet -- sudo podman load -i /vagrant/candlepin-image.tar
+
+      - name: Free disk space
+        run: |
+          rm -f foremanctl/candlepin-image.tar
+          podman system prune --all --force
+
+      - name: Configure repositories
+        working-directory: foremanctl
+        run: ./forge setup-repositories
+
+      - name: Run deployment
+        working-directory: foremanctl
+        run: |
+          ./foremanctl deploy \
+            --initial-admin-password=changeme \
+            --tuning development
+
+      - name: Run candlepin tests
+        working-directory: foremanctl
+        run: |
+          ./forge test --pytest-args="tests/feature/katello/candlepin_test.py"
+
+      - name: Generate sos reports
+        if: ${{ always() }}
+        working-directory: foremanctl
+        run: ./forge sos
+
+      - name: Archive sos reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: sosreport-integration
+          path: foremanctl/sos/
