@@ -1,7 +1,7 @@
 FROM quay.io/centos/centos:stream9
 
 ARG VERSION=4.8
-ARG VERSION_XYZ=4.8.2
+ARG VERSION_XYZ=4.8.3
 
 RUN dnf -y update && \
     dnf clean all
