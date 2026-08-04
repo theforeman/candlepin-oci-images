@@ -1,7 +1,16 @@
-FROM quay.io/centos/centos:stream9
+FROM quay.io/centos/centos:stream10
 
-ARG VERSION=4.8
-ARG VERSION_XYZ=4.8.4
+ARG VERSION=5.0
+ARG VERSION_XYZ=5.0.3
+
+LABEL org.opencontainers.image.title="Candlepin" \
+    org.opencontainers.image.description="Candlepin is an open source subscription & entitlement engine \
+which is designed to manage software subscriptions from both vendor's & customer's perspectives" \
+    org.opencontainers.image.documentation="https://www.candlepinproject.org/docs/candlepin/overview.html" \
+    org.opencontainers.image.licenses="GNU GPL v2.0" \
+    org.opencontainers.image.version=${VERSION} \
+    org.opencontainers.image.source="https://github.com/candlepin/candlepin" \
+    org.opencontainers.image.created=${BUILD_DATE}
 
 RUN dnf -y update && \
     dnf clean all
@@ -10,10 +19,9 @@ RUN dnf -y --nodocs --setopt install_weak_deps=False install \
     java-25-openjdk-headless \
     openssl \
     openssl-devel \
-    https://yum.theforeman.org/candlepin/${VERSION}/el9/x86_64/candlepin-${VERSION_XYZ}-1.el9.noarch.rpm \
-    https://yum.theforeman.org/candlepin/${VERSION}/el9/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el9.noarch.rpm && \
+    https://yum.theforeman.org/candlepin/${VERSION}/el10/x86_64/candlepin-${VERSION_XYZ}-1.el10.noarch.rpm \
+    https://yum.theforeman.org/candlepin/${VERSION}/el10/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el10.noarch.rpm && \
     dnf clean all
-
 
 USER tomcat
 
