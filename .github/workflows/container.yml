@@ -36,3 +36,6 @@ jobs:
             test -x /usr/local/bin/candlepin-db-migrate
             test -x /usr/libexec/tomcat/server
           '
+          migration_version="$(podman run --rm --entrypoint /bin/bash "$image" -c \
+            '/usr/local/bin/candlepin-db-migrate --version' 2>&1)"
+          grep -q 'using Java 25' <<< "$migration_version"
