@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+readonly candlepin_classes=/var/lib/tomcat/webapps/candlepin/WEB-INF/classes
+readonly candlepin_lib=/var/lib/tomcat/webapps/candlepin/WEB-INF/lib
+
+postgresql_jars=("${candlepin_lib}"/postgresql*.jar)
+
+if [[ ! -d "${candlepin_classes}" || ! -f "${postgresql_jars[0]}" ]]; then
+  echo 'The Candlepin RPM runtime layout required for database migration is missing.' >&2
+  exit 1
+fi
+
+classpath="$(IFS=:; printf '%s' "${postgresql_jars[*]}"):${candlepin_classes}"
+
+exec /usr/share/candlepin/liquibase.sh \
+  --driver=org.postgresql.Driver \
+  "--classpath=${classpath}" \
+  --changelog-file=db/changelog/changelog-update.xml \
+  "$@"

@@ -13,6 +13,12 @@ To build the container image locally:
 make build
 ```
 
+The image keeps the normal Tomcat command as its default. Orchestrators that
+run schema migration separately can invoke `candlepin-db-migrate` with standard
+Liquibase arguments before starting the application. Both commands run as the
+numeric UID/GID of the packaged `tomcat` account, so the same image works with
+standalone Podman and runtimes that enforce a non-root identity.
+
 ## How to Release
 
 To push a new version of the container:
