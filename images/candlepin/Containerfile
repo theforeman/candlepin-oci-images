@@ -23,6 +23,10 @@ RUN dnf -y --nodocs --setopt install_weak_deps=False install \
     https://yum.theforeman.org/candlepin/${VERSION}/el10/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el10.noarch.rpm && \
     dnf clean all
 
-USER tomcat
+COPY --chmod=0755 assets/candlepin-db-migrate /usr/local/bin/candlepin-db-migrate
+
+# Use the numeric package identity so runtimes can enforce runAsNonRoot without
+# duplicating the distribution's tomcat UID/GID mapping.
+USER 53:53
 
 CMD ["/usr/libexec/tomcat/server", "start"]
