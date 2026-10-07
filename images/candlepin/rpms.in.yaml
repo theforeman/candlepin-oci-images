@@ -1,0 +1,15 @@
+context:
+  containerfile: Containerfile
+contentOrigin:
+  repofiles:
+    - ../../repos/centos.repo
+    - ../../repos/candlepin.repo
+packages:
+  - java-25-openjdk-headless
+  - openssl
+  - openssl-devel
+  - candlepin
+  - candlepin-selinux
+arches:
+  - x86_64
+installWeakDeps: false

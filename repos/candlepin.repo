@@ -1,0 +1,17 @@
+[candlepin]
+name=Candlepin 5.0
+baseurl=https://yum.theforeman.org/candlepin/5.0/el10/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-candlepin
+gpgcheck=1
+repo_gpgcheck=0
+metadata_expire=6h
+enabled=1
+
+[candlepin-source]
+name=Candlepin 5.0 - Source
+baseurl=https://yum.theforeman.org/candlepin/5.0/el10/source/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-candlepin
+gpgcheck=1
+repo_gpgcheck=0
+metadata_expire=6h
+enabled=1
