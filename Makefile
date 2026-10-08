@@ -18,3 +18,32 @@ push:
 	$(foreach tag,$(IMAGE_TAGS),\
 		podman push $(tag);\
 	)
+
+# RPM lockfile maintenance. Keep this target on master for future version branches.
+RPM_LOCKFILE_INPUTS := images/candlepin/rpms.in.yaml
+RPM_LOCKFILE_VERSION ?= v0.30.1
+RPM_LOCKFILE_IMAGE ?= localhost/rpm-lockfile-prototype:$(RPM_LOCKFILE_VERSION)
+RPM_LOCKFILE_CONTAINERFILE_URL ?= https://raw.githubusercontent.com/konflux-ci/rpm-lockfile-prototype/refs/heads/main/Containerfile
+
+.PHONY: check-rpm-lockfile-inputs refresh-rpm-lockfiles refresh-rpm-lockfile rpm-lockfile-prototype-image
+check-rpm-lockfile-inputs:
+	@for input in $(RPM_LOCKFILE_INPUTS); do \
+		if [ ! -f "$$input" ]; then \
+			echo "Missing $$input; run this target from a branch with hermetic RPM inputs." >&2; \
+			exit 1; \
+		fi; \
+	done
+
+refresh-rpm-lockfiles: refresh-rpm-lockfile
+
+refresh-rpm-lockfile: rpm-lockfile-prototype-image
+	podman run --rm --volume "$(CURDIR):/work:z" \
+		--workdir /work/images/candlepin \
+		$(RPM_LOCKFILE_IMAGE) --outfile=rpms.lock.yaml rpms.in.yaml
+
+rpm-lockfile-prototype-image: check-rpm-lockfile-inputs
+	@if ! podman image exists "$(RPM_LOCKFILE_IMAGE)"; then \
+		curl --fail --location "$(RPM_LOCKFILE_CONTAINERFILE_URL)" | \
+			podman build --build-arg GIT_REF=tags/$(RPM_LOCKFILE_VERSION) \
+				--tag "$(RPM_LOCKFILE_IMAGE)" -; \
+	fi
