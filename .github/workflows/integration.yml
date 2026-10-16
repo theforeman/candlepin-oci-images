@@ -76,7 +76,7 @@ jobs:
 
       - name: Start VM
         working-directory: foremanctl
-        run: ./forge vms start --vms "quadlet"
+        run: ./forge vms start --vms "quadlet client"
 
       - name: Install podman in VM
         working-directory: foremanctl
@@ -103,10 +103,10 @@ jobs:
             --initial-admin-password=changeme \
             --tuning development
 
-      - name: Run candlepin tests
+      - name: Run tests
         working-directory: foremanctl
         run: |
-          ./forge test --pytest-args="tests/feature/katello/candlepin_test.py"
+          ./forge test --pytest-args="tests/feature/katello"
 
       - name: Generate sos reports
         if: ${{ always() }}
