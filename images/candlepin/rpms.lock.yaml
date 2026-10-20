@@ -102,13 +102,13 @@ arches:
     name: nss-util
     evr: 3.124.0-5.el10
     sourcerpm: nss-3.124.0-5.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/openssl-devel-3.5.8-1.el10.x86_64.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/openssl-devel-3.5.9-1.el10.x86_64.rpm
     repoid: appstream
-    size: 4436609
-    checksum: sha256:485f3135aa07e615e608da0598423038cbac6b64f9c4e33921451b21039079d2
+    size: 4423172
+    checksum: sha256:d9244d8c2f676273acaf88a4c059e2cf3a0ba92fd0d2e733ecf920b2552f9211
     name: openssl-devel
-    evr: 1:3.5.8-1.el10
-    sourcerpm: openssl-3.5.8-1.el10.src.rpm
+    evr: 1:3.5.9-1.el10
+    sourcerpm: openssl-3.5.9-1.el10.src.rpm
   - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/policycoreutils-python-utils-3.11-1.el10.noarch.rpm
     repoid: appstream
     size: 47524
@@ -284,13 +284,27 @@ arches:
     name: lksctp-tools
     evr: 1.0.21-1.el10
     sourcerpm: lksctp-tools-1.0.21-1.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/openssl-3.5.8-1.el10.x86_64.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/openssl-3.5.9-1.el10.x86_64.rpm
     repoid: baseos
-    size: 1330252
-    checksum: sha256:5d13ccade568281beb12e4b1bf3caa74e00ce05cb819cee27faf9bcfd44f5b4c
+    size: 1332882
+    checksum: sha256:2c9b63c93997a2e259c8d31ef84fb2514dba7dab8adcb39e9dc79cf37e9be9d6
     name: openssl
-    evr: 1:3.5.8-1.el10
-    sourcerpm: openssl-3.5.8-1.el10.src.rpm
+    evr: 1:3.5.9-1.el10
+    sourcerpm: openssl-3.5.9-1.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/openssl-fips-provider-3.5.9-1.el10.x86_64.rpm
+    repoid: baseos
+    size: 832711
+    checksum: sha256:6dabd095a1b9977cbbb9ef70d9e0d2507f099de4cea6e87a31784658460a1bb1
+    name: openssl-fips-provider
+    evr: 1:3.5.9-1.el10
+    sourcerpm: openssl-3.5.9-1.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/openssl-libs-3.5.9-1.el10.x86_64.rpm
+    repoid: baseos
+    size: 2373424
+    checksum: sha256:33c5f1171f58c13c11bc4152a50da289c98b61c1d0935d2190c402dc09b1c421
+    name: openssl-libs
+    evr: 1:3.5.9-1.el10
+    sourcerpm: openssl-3.5.9-1.el10.src.rpm
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/pkgconf-2.1.0-3.el10.x86_64.rpm
     repoid: baseos
     size: 45652
@@ -523,12 +537,12 @@ arches:
     checksum: sha256:0b389aa4ac3d18c9514040df8a0bf50cc2bf1de97f2e21fc9effa72c79ad9ae3
     name: lksctp-tools
     evr: 1.0.21-1.el10
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/openssl-3.5.8-1.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/openssl-3.5.9-1.el10.src.rpm
     repoid: baseos-source
-    size: 53462874
-    checksum: sha256:3c877eac271754aedc860014e828cb7b5dc435f7840702af56e6ea8ad8333565
+    size: 54100612
+    checksum: sha256:635df2aea548f463d897854d776abb6adb29050769cb5225ae355ab0ba49979a
     name: openssl
-    evr: 1:3.5.8-1.el10
+    evr: 1:3.5.9-1.el10
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/pkgconf-2.1.0-3.el10.src.rpm
     repoid: baseos-source
     size: 346332
