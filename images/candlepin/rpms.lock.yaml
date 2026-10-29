@@ -193,13 +193,13 @@ arches:
     name: wget
     evr: 1.24.5-8.el10
     sourcerpm: wget-1.24.5-8.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/avahi-libs-0.9~rc2-5.el10.x86_64.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/avahi-libs-0.9~rc2-7.el10.x86_64.rpm
     repoid: baseos
-    size: 68587
-    checksum: sha256:cf0298c37612debd491870d333692a1c7ddc2c8c4ce9aceaffebb744292c7158
+    size: 68601
+    checksum: sha256:b5c096da359c2e6c1bd29b30e6ca2ffbaab76c7981a7f01ce9c3923947285e5f
     name: avahi-libs
-    evr: 0.9~rc2-5.el10
-    sourcerpm: avahi-0.9~rc2-5.el10.src.rpm
+    evr: 0.9~rc2-7.el10
+    sourcerpm: avahi-0.9~rc2-7.el10.src.rpm
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/cups-filesystem-2.4.10-18.el10.noarch.rpm
     repoid: baseos
     size: 10772
@@ -291,20 +291,6 @@ arches:
     name: openssl
     evr: 1:3.5.9-1.el10
     sourcerpm: openssl-3.5.9-1.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/openssl-fips-provider-3.5.9-1.el10.x86_64.rpm
-    repoid: baseos
-    size: 832711
-    checksum: sha256:6dabd095a1b9977cbbb9ef70d9e0d2507f099de4cea6e87a31784658460a1bb1
-    name: openssl-fips-provider
-    evr: 1:3.5.9-1.el10
-    sourcerpm: openssl-3.5.9-1.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/openssl-libs-3.5.9-1.el10.x86_64.rpm
-    repoid: baseos
-    size: 2373424
-    checksum: sha256:33c5f1171f58c13c11bc4152a50da289c98b61c1d0935d2190c402dc09b1c421
-    name: openssl-libs
-    evr: 1:3.5.9-1.el10
-    sourcerpm: openssl-3.5.9-1.el10.src.rpm
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/pkgconf-2.1.0-3.el10.x86_64.rpm
     repoid: baseos
     size: 45652
@@ -354,20 +340,20 @@ arches:
     name: python3-setools
     evr: 4.7.1-1.1.el10
     sourcerpm: setools-4.7.1-1.1.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/rpm-plugin-selinux-4.19.1.1-25.el10.x86_64.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/rpm-plugin-selinux-4.19.1.1-28.el10.x86_64.rpm
     repoid: baseos
-    size: 17377
-    checksum: sha256:00dc8411332bf60c2d3f6791acc39643b254029d105f674eeccd7ee5f0152f2c
+    size: 17348
+    checksum: sha256:b2d62c925f75302f25d69ef72868d49eda01adef7bf7592d4c33999f975fb129
     name: rpm-plugin-selinux
-    evr: 4.19.1.1-25.el10
-    sourcerpm: rpm-4.19.1.1-25.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/rpm-plugin-syslog-4.19.1.1-25.el10.x86_64.rpm
+    evr: 4.19.1.1-28.el10
+    sourcerpm: rpm-4.19.1.1-28.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/rpm-plugin-syslog-4.19.1.1-28.el10.x86_64.rpm
     repoid: baseos
-    size: 18232
-    checksum: sha256:b7245944d2d1c8e847f32dff0795d2d87c6c65fbb6904352dd091dace495bab3
+    size: 18207
+    checksum: sha256:5c78a7f3dd3b20306f9060045e0bfa8d1e7e3bb763751ce63b04d093bbfc5553
     name: rpm-plugin-syslog
-    evr: 4.19.1.1-25.el10
-    sourcerpm: rpm-4.19.1.1-25.el10.src.rpm
+    evr: 4.19.1.1-28.el10
+    sourcerpm: rpm-4.19.1.1-28.el10.src.rpm
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/selinux-policy-42.1.27-2.el10.noarch.rpm
     repoid: baseos
     size: 62259
@@ -382,20 +368,20 @@ arches:
     name: selinux-policy-targeted
     evr: 42.1.27-2.el10
     sourcerpm: selinux-policy-42.1.27-2.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/systemd-257-34.el10.x86_64.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/systemd-257-35.el10.x86_64.rpm
     repoid: baseos
-    size: 6082158
-    checksum: sha256:ad069e2548015564c8ceaaaada4cdab9e275d82cc2d0c0b4013500f04e883a17
+    size: 6083032
+    checksum: sha256:1ccc2b40ec4a86f03098558438e67827e1f1630914094cf8a7e6e0098e9308e9
     name: systemd
-    evr: 257-34.el10
-    sourcerpm: systemd-257-34.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/systemd-pam-257-34.el10.x86_64.rpm
+    evr: 257-35.el10
+    sourcerpm: systemd-257-35.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/systemd-pam-257-35.el10.x86_64.rpm
     repoid: baseos
-    size: 343117
-    checksum: sha256:2171d91c183e89861556d70bc4fd120ec94123ca8b5e40fab6cb46bf594fdd47
+    size: 343419
+    checksum: sha256:d0e84e8620beba4146c946187d648ff22a4a393bb614de5fb3d993c520c05e44
     name: systemd-pam
-    evr: 257-34.el10
-    sourcerpm: systemd-257-34.el10.src.rpm
+    evr: 257-35.el10
+    sourcerpm: systemd-257-35.el10.src.rpm
   - url: https://yum.theforeman.org/candlepin/5.0/el10/x86_64/candlepin-5.0.3-1.el10.noarch.rpm
     repoid: candlepin
     size: 89221383
@@ -471,12 +457,12 @@ arches:
     checksum: sha256:313360f8ca1dded6614621ca225d1d807d5ee28e7561e69d40b3e4545bc9c41c
     name: audit
     evr: 4.2.1-3.el10
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/avahi-0.9~rc2-5.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/avahi-0.9~rc2-7.el10.src.rpm
     repoid: baseos-source
-    size: 1159690
-    checksum: sha256:f143e7424498ad8ea6bf2906bc0b50d2d3fefaaa154eec30de1500c60bdfaca7
+    size: 1165998
+    checksum: sha256:8afbb696db3e970563fa610c62b8a57264cc9e234ab742308a7738e55eba95aa
     name: avahi
-    evr: 0.9~rc2-5.el10
+    evr: 0.9~rc2-7.el10
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/cups-2.4.10-18.el10.src.rpm
     repoid: baseos-source
     size: 8451207
@@ -567,12 +553,12 @@ arches:
     checksum: sha256:ed90d701d1c774eea5ff1e6d61f287885c8a68f07cfcb26c8da03c0527117d0b
     name: python-distro
     evr: 1.9.0-5.el10
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/rpm-4.19.1.1-25.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/rpm-4.19.1.1-28.el10.src.rpm
     repoid: baseos-source
-    size: 6053564
-    checksum: sha256:cf0b52bc4e2439e7eabe28ba5d63be0404640191648b1ae21df0eceeb45b6a21
+    size: 6072638
+    checksum: sha256:aae17f49a2d7421d90173386671e7167c8eccbb5e3f9b31da1ac4f3a95d639b8
     name: rpm
-    evr: 4.19.1.1-25.el10
+    evr: 4.19.1.1-28.el10
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/selinux-policy-42.1.27-2.el10.src.rpm
     repoid: baseos-source
     size: 1316734
@@ -585,12 +571,12 @@ arches:
     checksum: sha256:ddffedc8803386fbf37ce5f27a85c61cf492e49f697d810fc805916b967660a0
     name: setools
     evr: 4.7.1-1.1.el10
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/systemd-257-34.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/systemd-257-35.el10.src.rpm
     repoid: baseos-source
-    size: 20756505
-    checksum: sha256:b85667d0693461a505c4f37a06d73ade2d013c6b112ad7fcc9dd2e7107c1ae6b
+    size: 20785419
+    checksum: sha256:4d3b74c5ca1f1a0b21db334f004169f44e13d57b6e99123072c71b29339868cc
     name: systemd
-    evr: 257-34.el10
+    evr: 257-35.el10
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/tzdata-2026e-1.el10.src.rpm
     repoid: baseos-source
     size: 935242
