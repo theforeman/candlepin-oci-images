@@ -144,48 +144,48 @@ arches:
     name: python3-policycoreutils
     evr: 3.11-1.el10
     sourcerpm: policycoreutils-3.11-1.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-10.1.49-4.el10.noarch.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-10.1.49-5.el10.noarch.rpm
     repoid: appstream
-    size: 104525
-    checksum: sha256:09385e20ec0154ad995f946147593292ac7d58b451f820d0cc033ca5dcf29460
+    size: 103875
+    checksum: sha256:bb31a263c5c4c049b1b3ec8f7a1972827f520eab505708605544f2ccc9b18f35
     name: tomcat
-    evr: 1:10.1.49-4.el10
-    sourcerpm: tomcat-10.1.49-4.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-el-5.0-api-10.1.49-4.el10.noarch.rpm
+    evr: 1:10.1.49-5.el10
+    sourcerpm: tomcat-10.1.49-5.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-el-5.0-api-10.1.49-5.el10.noarch.rpm
     repoid: appstream
-    size: 111997
-    checksum: sha256:316a7b0cdb2db7d39de9479b0989022fdd84fb8cf5a7302b06f8c9149faa1713
+    size: 111394
+    checksum: sha256:8725ee68cbc2d1d41e59a8c26f4562067a1d3d502a083fd0e3684968586eb007
     name: tomcat-el-5.0-api
-    evr: 1:10.1.49-4.el10
-    sourcerpm: tomcat-10.1.49-4.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-jsp-3.1-api-10.1.49-4.el10.noarch.rpm
+    evr: 1:10.1.49-5.el10
+    sourcerpm: tomcat-10.1.49-5.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-jsp-3.1-api-10.1.49-5.el10.noarch.rpm
     repoid: appstream
-    size: 78703
-    checksum: sha256:5c97a6573d3e318d55fb281163cff6d939ad270edb097d0dfde2293c80d11c4a
+    size: 78087
+    checksum: sha256:812dc3ec88380d3cbba8bf93214de1d44924af3244d24bd2970e1a68f4eb6bc1
     name: tomcat-jsp-3.1-api
-    evr: 1:10.1.49-4.el10
-    sourcerpm: tomcat-10.1.49-4.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-lib-10.1.49-4.el10.noarch.rpm
+    evr: 1:10.1.49-5.el10
+    sourcerpm: tomcat-10.1.49-5.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-lib-10.1.49-5.el10.noarch.rpm
     repoid: appstream
-    size: 6320799
-    checksum: sha256:340e628024fa1bfbfecce81ca483a863a0055f873c29fe8e4d93410689b2a4a1
+    size: 6319982
+    checksum: sha256:095f3c3ce7daa26d996deb9e3ac2a8d128d96a143d9c92ac51707ab0d113d83e
     name: tomcat-lib
-    evr: 1:10.1.49-4.el10
-    sourcerpm: tomcat-10.1.49-4.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-servlet-6.0-api-10.1.49-4.el10.noarch.rpm
+    evr: 1:10.1.49-5.el10
+    sourcerpm: tomcat-10.1.49-5.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tomcat-servlet-6.0-api-10.1.49-5.el10.noarch.rpm
     repoid: appstream
-    size: 369457
-    checksum: sha256:6dddb6c091bd00b1c1f1e9b702f1d1f824b73003a9e2a167b6e857b6bb5afd35
+    size: 368837
+    checksum: sha256:3da82d6e62461663c69711d27d1a5dd435eadb7b14558731bf5df86949c05dc4
     name: tomcat-servlet-6.0-api
-    evr: 1:10.1.49-4.el10
-    sourcerpm: tomcat-10.1.49-4.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tzdata-java-2026e-1.el10.noarch.rpm
+    evr: 1:10.1.49-5.el10
+    sourcerpm: tomcat-10.1.49-5.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/tzdata-java-2026f-1.el10.noarch.rpm
     repoid: appstream
-    size: 46199
-    checksum: sha256:71c8e2c449cf1cae8966e5e8c3d0b36e88eb3f6a12520ad2398a51717b1113e0
+    size: 46573
+    checksum: sha256:f078b2ae226d8b021efb6fe8ccf2d69a8c7b8430865e561fa14aae0e760628cb
     name: tzdata-java
-    evr: 2026e-1.el10
-    sourcerpm: tzdata-2026e-1.el10.src.rpm
+    evr: 2026f-1.el10
+    sourcerpm: tzdata-2026f-1.el10.src.rpm
   - url: https://mirror.stream.centos.org/10-stream/AppStream/x86_64/os/Packages/wget-1.24.5-8.el10.x86_64.rpm
     repoid: appstream
     size: 827457
@@ -354,20 +354,20 @@ arches:
     name: rpm-plugin-syslog
     evr: 4.19.1.1-28.el10
     sourcerpm: rpm-4.19.1.1-28.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/selinux-policy-42.1.27-2.el10.noarch.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/selinux-policy-42.1.28-1.el10.noarch.rpm
     repoid: baseos
-    size: 62259
-    checksum: sha256:b8d9d3bc673044983873cf6d9a255d29499d4f39cfe22e74f5243726a74cca14
+    size: 61818
+    checksum: sha256:efce0d1548ffd662efad001a459c57e49b99c1384c670f37fa15a83fd98bbf1e
     name: selinux-policy
-    evr: 42.1.27-2.el10
-    sourcerpm: selinux-policy-42.1.27-2.el10.src.rpm
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/selinux-policy-targeted-42.1.27-2.el10.noarch.rpm
+    evr: 42.1.28-1.el10
+    sourcerpm: selinux-policy-42.1.28-1.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/selinux-policy-targeted-42.1.28-1.el10.noarch.rpm
     repoid: baseos
-    size: 6559523
-    checksum: sha256:6d032f1e81ac7ab1ae0bacdbd28a54122ff19673805644448162a2bbcd3ddb30
+    size: 6565812
+    checksum: sha256:8a2123a4273c55e2a98de3df88bb7975356b1a0051b54fa8843bbd09b36517ba
     name: selinux-policy-targeted
-    evr: 42.1.27-2.el10
-    sourcerpm: selinux-policy-42.1.27-2.el10.src.rpm
+    evr: 42.1.28-1.el10
+    sourcerpm: selinux-policy-42.1.28-1.el10.src.rpm
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/x86_64/os/Packages/systemd-257-35.el10.x86_64.rpm
     repoid: baseos
     size: 6083032
@@ -439,12 +439,12 @@ arches:
     checksum: sha256:9a51902c4ab6fc1cdab40368c9df05c989354ba6bb4ba738486286324400bc53
     name: nss
     evr: 3.124.0-5.el10
-  - url: https://mirror.stream.centos.org/10-stream/AppStream/source/tree/Packages/tomcat-10.1.49-4.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/AppStream/source/tree/Packages/tomcat-10.1.49-5.el10.src.rpm
     repoid: appstream-source
-    size: 10538410
-    checksum: sha256:c0aaacc1b4aa3d6661b9cbd6bf9f8bbc9aa6c6e3d637ffbebe6915c1d52113f8
+    size: 10537632
+    checksum: sha256:7dc33e8e8740b62b5f86f5a26092a531fd0fdb5f867aeb91073c9734ac4bd977
     name: tomcat
-    evr: 1:10.1.49-4.el10
+    evr: 1:10.1.49-5.el10
   - url: https://mirror.stream.centos.org/10-stream/AppStream/source/tree/Packages/wget-1.24.5-8.el10.src.rpm
     repoid: appstream-source
     size: 5241350
@@ -559,12 +559,12 @@ arches:
     checksum: sha256:aae17f49a2d7421d90173386671e7167c8eccbb5e3f9b31da1ac4f3a95d639b8
     name: rpm
     evr: 4.19.1.1-28.el10
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/selinux-policy-42.1.27-2.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/selinux-policy-42.1.28-1.el10.src.rpm
     repoid: baseos-source
-    size: 1316734
-    checksum: sha256:7cb9f39d70102625ae33e166723eab83566d6de7679799f4007a23db0294edd0
+    size: 1319129
+    checksum: sha256:a0c6f84c9f6da13f7e1a1d9fbc418bd8a32f3cc9110a351056a77e2026e05223
     name: selinux-policy
-    evr: 42.1.27-2.el10
+    evr: 42.1.28-1.el10
   - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/setools-4.7.1-1.1.el10.src.rpm
     repoid: baseos-source
     size: 428295
@@ -577,12 +577,12 @@ arches:
     checksum: sha256:4d3b74c5ca1f1a0b21db334f004169f44e13d57b6e99123072c71b29339868cc
     name: systemd
     evr: 257-35.el10
-  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/tzdata-2026e-1.el10.src.rpm
+  - url: https://mirror.stream.centos.org/10-stream/BaseOS/source/tree/Packages/tzdata-2026f-1.el10.src.rpm
     repoid: baseos-source
-    size: 935242
-    checksum: sha256:9768550e30d86d5564793a0eea3261b73e9dfb100adef67094bb0ada64134715
+    size: 937868
+    checksum: sha256:3da2d01aea6b855387ebb144d7d3f4ff11cc5c785a728730d84bb3bba4f1e35a
     name: tzdata
-    evr: 2026e-1.el10
+    evr: 2026f-1.el10
   - url: https://yum.theforeman.org/candlepin/5.0/el10/source/candlepin-5.0.3-1.el10.src.rpm
     repoid: candlepin-source
     size: 98729817
