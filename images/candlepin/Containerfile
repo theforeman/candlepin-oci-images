@@ -2,6 +2,7 @@ FROM quay.io/centos/centos:stream10
 
 ARG VERSION=5.0
 ARG VERSION_XYZ=5.0.3
+ARG USE_HERMETO_REPOS=false
 
 LABEL org.opencontainers.image.title="Candlepin" \
     org.opencontainers.image.description="Candlepin is an open source subscription & entitlement engine \
@@ -12,15 +13,21 @@ which is designed to manage software subscriptions from both vendor's & customer
     org.opencontainers.image.source="https://github.com/candlepin/candlepin" \
     org.opencontainers.image.created=${BUILD_DATE}
 
-RUN dnf -y update && \
-    dnf clean all
+COPY RPM-GPG-KEY-candlepin /etc/pki/rpm-gpg/RPM-GPG-KEY-candlepin
 
-RUN dnf -y --nodocs --setopt install_weak_deps=False install \
-    java-25-openjdk-headless \
-    openssl \
-    openssl-devel \
-    https://yum.theforeman.org/candlepin/${VERSION}/el10/x86_64/candlepin-${VERSION_XYZ}-1.el10.noarch.rpm \
-    https://yum.theforeman.org/candlepin/${VERSION}/el10/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el10.noarch.rpm && \
+RUN rpmkeys --import \
+        /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial-SHA256 \
+        /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512 \
+        /etc/pki/rpm-gpg/RPM-GPG-KEY-candlepin && \
+    if [ "${USE_HERMETO_REPOS}" = "true" ]; then \
+        dnf -y --nodocs --setopt install_weak_deps=False install \
+            java-25-openjdk-headless openssl openssl-devel candlepin candlepin-selinux; \
+    else \
+        dnf -y --nodocs --setopt install_weak_deps=False install \
+            java-25-openjdk-headless openssl openssl-devel \
+            https://yum.theforeman.org/candlepin/${VERSION}/el10/x86_64/candlepin-${VERSION_XYZ}-1.el10.noarch.rpm \
+            https://yum.theforeman.org/candlepin/${VERSION}/el10/x86_64/candlepin-selinux-${VERSION_XYZ}-1.el10.noarch.rpm; \
+    fi && \
     dnf clean all
 
 USER tomcat
