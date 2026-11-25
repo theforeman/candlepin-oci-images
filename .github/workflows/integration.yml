@@ -85,7 +85,8 @@ jobs:
       - name: Load image into VM
         working-directory: foremanctl
         run: |
-          vagrant ssh quadlet -- sudo podman load -i /vagrant/candlepin-image.tar
+          vagrant upload candlepin-image.tar quadlet
+          vagrant ssh quadlet -- sudo podman load -i /home/vagrant/candlepin-image.tar
 
       - name: Free disk space
         run: |
